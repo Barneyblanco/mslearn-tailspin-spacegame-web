@@ -7,7 +7,7 @@ trigger:
 - '*'
 
 pool:
-  vmImage: 'ubuntu-18.04'
+  vmImage: 'ubuntu-latest'
   demands:
   - npm
 
@@ -42,7 +42,7 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
-- script: dotnet build --configuration $(buildConfiguration)
+- script: 'dotnet build --configuration $(buildConfiguration)'
   displayName: 'dotnet build $(buildConfiguration)'
   inputs:
     command: 'build'
